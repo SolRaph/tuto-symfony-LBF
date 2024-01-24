@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses - La Boutique Française{% endblock %}
+
+{% block content %}
+<a href="" class="btn btn-info btn-sm float-end">Ajouter une adresse</a>
+    <h1>Mes addresses</h1>   
+    C'est dans cet espace que vous pouvez gérer vos addresses.<br>
+   <a href="{{path('app_account')}}">Retourner à mon compte</a>
+    <hr>
+    {% if app.user.addresses| %}
+        
+    {% endif %}
+
+{% endblock %}

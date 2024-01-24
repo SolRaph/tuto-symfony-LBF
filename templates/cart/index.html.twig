@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier - La Boutique Française{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1>Mon panier</h1>
+    Retrouvez l'ensemble de votre panier sur cette page 
+</div>
+{% if cart|length >0 %}
+    
+      <table class="table mt-3">
+    <thead>
+      <tr>
+      <th scope="col"></th>
+        <th scope="col">Produits</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Quantités</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody> 
+      {% set quantitytotal = null %}
+      {% set total = null %}
+      {% for product in cart %}
+    
+      <tr>
+        <th>
+          <img src="/uploads/{{product.product.illustration}}" alt="{{product.product.name}}"height="100px"><br/>
+          
+        </th>
+        <td>
+              {{product.product.name}}<br/>
+              <small>{{product.product.subtitle}}</small>
+        </td>
+        <td>{{(product.product.prix / 100) |number_format('2')}} €</td>
+        <td>
+        <a href="{{ path('decrease_to_cart',{'id' : product.product.id})}}">
+        <img src="{{asset('assets/img/moins.png')}}"height="10px" alt="moins">
+        </a>
+        (x {{product.quantity}})
+        <a href="{{ path('add_to_cart',{'id' : product.product.id})}}">
+        <img src="{{asset('assets/img/plus.png')}}"height="10px" alt="plus">
+        </a>
+        </td>
+        <td>{{ ((product.product.prix * product.quantity)/ 100) |number_format('2') }} €</td>
+        <td>
+
+          <a href="{{ path('delete_to_cart', {'id' :product.product.id}) }}">
+            <img src="{{asset('assets/img/delete.png')}}"height="30px" alt="supprimer mon produit">     
+          </a>
+
+        </td>
+      </tr>
+      
+          {% set quantitytotal = quantitytotal + (product.quantity) %}
+          {% set total = total + (product.product.prix * product.quantity) %}
+    
+    {% endfor %}
+    </tbody>
+  </table>
+  <div class="text-center mb-5">
+      <b>Nombre de produit : </b>{{ quantitytotal }}<br>
+      <b>Total de mon panier</b>{{ (total/ 100) |number_format('2') }} €<br>
+          <div class="d-grid mt-3" >
+              <a href="" class="btn btn-success btn-block">Valider mon panier</a>
+          </div>
+  </div>
+{% else %}
+<hr>
+<p class= "text-center fs-1"><b>Votre panier est vide</b></p>
+<a href="{{path('app_products')}}">Revenir à nos produits </a>
+{% endif %}
+{% endblock %}
