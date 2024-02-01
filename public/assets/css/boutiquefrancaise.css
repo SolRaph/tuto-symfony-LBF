@@ -12,7 +12,7 @@ body{
     bottom: 0;
     width: 100%;
     background-color: #dfeaff;
-    padding-top: 25px;
+    margin-top: 10rem;
 }
 
 .product-item h5{
@@ -39,3 +39,24 @@ body{
 .product-page-prix{
     font-size: 5rem;
 }
+
+.block-small{
+
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-check{
+    background-color:aliceblue;
+    padding: 20px 65px;
+    margin-top: 7px;
+}
+.col-form-label{
+    font-weight: bold;
+}
+.order-summary{
+    background-color: #f4f8ff;
+    padding: 20px; 
+    margin-top: 13px;
+}
+
+/* TEST HR */

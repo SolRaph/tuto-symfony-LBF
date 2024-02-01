@@ -84,26 +84,49 @@ class __TwigTemplate_fa62af6e2babb0d2016e25a4a7b9e5c9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 7
-        echo " <div class=\"row\">
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+        echo "<h3>Nos meilleurs ventes</h3>
+<p>Découvrez nos articles les plus vendus</p>
+ <div class=\"row\">
+  ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 10, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+            // line 11
+            echo "    <div class=\"col-md-3\">
+      ";
+            // line 12
+            $this->loadTemplate("products/single_product.html.twig", "home/index.html.twig", 12)->display($context);
+            // line 13
+            echo "    </div>
+  ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "    </div><!-- /.row -->
 
 
     <!-- START THE FEATURETTES -->
@@ -175,7 +198,7 @@ class __TwigTemplate_fa62af6e2babb0d2016e25a4a7b9e5c9 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  87 => 7,  77 => 6,  59 => 3,  36 => 1,);
+        return array (  129 => 15,  114 => 13,  112 => 12,  109 => 11,  92 => 10,  87 => 7,  77 => 6,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -186,25 +209,14 @@ class __TwigTemplate_fa62af6e2babb0d2016e25a4a7b9e5c9 extends Template
   
 
 {% block content %}
+<h3>Nos meilleurs ventes</h3>
+<p>Découvrez nos articles les plus vendus</p>
  <div class=\"row\">
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class=\"col-lg-4\">
-        <svg class=\"bd-placeholder-img rounded-circle\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Placeholder: 140x140\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><title>Placeholder</title><rect width=\"100%\" height=\"100%\" fill=\"#777\"/><text x=\"50%\" y=\"50%\" fill=\"#777\" dy=\".3em\">140x140</text></svg>
-        <h2 class=\"fw-normal\">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class=\"btn btn-secondary\" href=\"#\">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
+  {% for product in products %}
+    <div class=\"col-md-3\">
+      {% include 'products/single_product.html.twig' %}
+    </div>
+  {% endfor %}
     </div><!-- /.row -->
 
 

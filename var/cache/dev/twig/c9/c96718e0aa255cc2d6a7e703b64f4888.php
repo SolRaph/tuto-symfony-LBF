@@ -166,42 +166,66 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
             // line 75
             echo "  <div id=\"myCarousel\" class=\"carousel slide\" data-bs-ride=\"carousel\">
     <div class=\"carousel-indicators\">
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"2\" aria-label=\"Slide 3\"></button>
-    </div>
+      ";
+            // line 77
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 77, $this->source); })()));
+            foreach ($context['_seq'] as $context["key"] => $context["header"]) {
+                // line 78
+                echo "        <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"";
+                echo twig_escape_filter($this->env, $context["key"], "html", null, true);
+                echo "\" ";
+                if (($context["key"] == 0)) {
+                    echo "class=\"active\"";
+                }
+                echo " aria-current=\"true\" aria-label=\"Slide 1\"></button>
+      ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 80
+            echo "    </div>
     <div class=\"carousel-inner\">
-      <div class=\"carousel-item active\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption text-start\">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Sign up today</a></p>
+      ";
+            // line 82
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["headers"]) || array_key_exists("headers", $context) ? $context["headers"] : (function () { throw new RuntimeError('Variable "headers" does not exist.', 82, $this->source); })()));
+            foreach ($context['_seq'] as $context["key"] => $context["header"]) {
+                // line 83
+                echo "        <div class=\"carousel-item ";
+                if (($context["key"] == 0)) {
+                    echo " active ";
+                }
+                echo "\"style=\"background: url('/uploads/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "illustration", [], "any", false, false, false, 83), "html", null, true);
+                echo "'); background-size:cover;\">
+          <div class=\"container\">
+            <div class=\"carousel-caption text-start\">
+              <h1>";
+                // line 86
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "title", [], "any", false, false, false, 86), "html", null, true);
+                echo "</h1>
+              <p>";
+                // line 87
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "content", [], "any", false, false, false, 87), "html", null, true);
+                echo "</p>
+              <p><a class=\"btn btn-lg btn-info\" href=\"";
+                // line 88
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnUrl", [], "any", false, false, false, 88), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["header"], "btnTitle", [], "any", false, false, false, 88), "html", null, true);
+                echo "</a></p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class=\"carousel-item\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption\">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class=\"carousel-item\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption text-end\">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
+        </div>    
+      ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['key'], $context['header'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 93
+            echo "    </div>
     <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide=\"prev\">
       <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>
       <span class=\"visually-hidden\">Previous</span>
@@ -213,22 +237,22 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
   </div>
 ";
         }
-        // line 123
+        // line 104
         echo "
   <!-- Marketing messaging and featurettes
   ================================================== -->
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class=\"container marketing ";
-        // line 128
+        // line 109
         if ( !        $this->hasBlock("carousel", $context, $blocks)) {
             echo "mt-5";
         }
         echo " %}\">
     ";
-        // line 129
+        // line 110
         $this->displayBlock('content', $context, $blocks);
-        // line 131
+        // line 112
         echo "
   </div><!-- /.container -->
 
@@ -243,16 +267,16 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
 
 
     <script src=\"";
-        // line 144
+        // line 125
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 
       
   </body>
   ";
-        // line 148
+        // line 129
         $this->displayBlock('script', $context, $blocks);
-        // line 150
+        // line 131
         echo "</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -291,8 +315,8 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
 
-        // line 15
-        echo "  ";
+        echo " 
+  ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -301,7 +325,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
 
     }
 
-    // line 129
+    // line 110
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -311,7 +335,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 130
+        // line 111
         echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -321,7 +345,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
 
     }
 
-    // line 148
+    // line 129
     public function block_script($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -331,7 +355,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "script"));
 
-        // line 149
+        // line 130
         echo "  ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -362,7 +386,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  335 => 149,  325 => 148,  315 => 130,  305 => 129,  295 => 15,  285 => 14,  266 => 10,  256 => 150,  254 => 148,  247 => 144,  232 => 131,  230 => 129,  224 => 128,  217 => 123,  167 => 75,  165 => 74,  153 => 65,  149 => 64,  144 => 61,  136 => 59,  126 => 57,  124 => 56,  111 => 46,  101 => 39,  91 => 32,  87 => 31,  70 => 16,  68 => 14,  63 => 12,  58 => 10,  47 => 1,);
+        return array (  359 => 130,  349 => 129,  339 => 111,  329 => 110,  309 => 14,  290 => 10,  280 => 131,  278 => 129,  271 => 125,  256 => 112,  254 => 110,  248 => 109,  241 => 104,  228 => 93,  215 => 88,  211 => 87,  207 => 86,  196 => 83,  192 => 82,  188 => 80,  175 => 78,  171 => 77,  167 => 75,  165 => 74,  153 => 65,  149 => 64,  144 => 61,  136 => 59,  126 => 57,  124 => 56,  111 => 46,  101 => 39,  91 => 32,  87 => 31,  70 => 16,  68 => 14,  63 => 12,  58 => 10,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -380,7 +404,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
 
     <link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\">
 
-  {% block javascript %}
+  {% block javascript %} 
   {% endblock javascript %}
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>
     <link href=\"/docs/5.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">
@@ -443,41 +467,22 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
   {% if block('carousel') is defined %}
   <div id=\"myCarousel\" class=\"carousel slide\" data-bs-ride=\"carousel\">
     <div class=\"carousel-indicators\">
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"0\" class=\"active\" aria-current=\"true\" aria-label=\"Slide 1\"></button>
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"1\" aria-label=\"Slide 2\"></button>
-      <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"2\" aria-label=\"Slide 3\"></button>
+      {% for key,header in headers %}
+        <button type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide-to=\"{{key}}\" {% if key == 0%}class=\"active\"{% endif %} aria-current=\"true\" aria-label=\"Slide 1\"></button>
+      {% endfor %}
     </div>
     <div class=\"carousel-inner\">
-      <div class=\"carousel-item active\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption text-start\">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Sign up today</a></p>
+      {% for key,header in headers %}
+        <div class=\"carousel-item {% if key == 0 %} active {% endif %}\"style=\"background: url('/uploads/{{header.illustration}}'); background-size:cover;\">
+          <div class=\"container\">
+            <div class=\"carousel-caption text-start\">
+              <h1>{{header.title}}</h1>
+              <p>{{header.content}}</p>
+              <p><a class=\"btn btn-lg btn-info\" href=\"{{header.btnUrl}}\">{{header.btnTitle}}</a></p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class=\"carousel-item\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption\">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class=\"carousel-item\">
-        <svg class=\"bd-placeholder-img\" width=\"100%\" height=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" preserveAspectRatio=\"xMidYMid slice\" focusable=\"false\"><rect width=\"100%\" height=\"100%\" fill=\"#777\"/></svg>
-        <div class=\"container\">
-          <div class=\"carousel-caption text-end\">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class=\"btn btn-lg btn-primary\" href=\"#\">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
+        </div>    
+      {% endfor %}
     </div>
     <button class=\"carousel-control-prev\" type=\"button\" data-bs-target=\"#myCarousel\" data-bs-slide=\"prev\">
       <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>

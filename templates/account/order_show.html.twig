@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ma commandes - La Boutique Française{% endblock %}
+
+{% block content %}
+    <h1>Ma commandes {{order.reference}}</h1>   
+   <a href="{{path('app_account')}}">Retourner à mon compte</a>
+<hr><strong></strong>
+<strong>Statut de la commande : </strong><br/>
+      {% if order.state == 1 %}
+      <strong>Paiement accepté</strong>
+      {% elseif order.state == 2 %}
+      <strong>Préparation en cours</strong>
+      {% elseif order.state == 3 %}
+      <strong>Livraison en cours</strong>
+      {% endif %}
+commande passée le : <strong>{{order.createdAt|date('d/m/Y')}}</strong><br/>
+Référence de ma commande : <strong>{{order.reference}}</strong><br/>
+Transporteur choisi : <strong>{{order.carriername}}</strong>
+
+<table class="table mt-5">
+  <thead>
+    <tr>
+
+      <th scope="col">Produit</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Prix unitaire</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for product in order.orderDetails %}
+    
+    <tr>
+      <td>{{product.product}}</td>
+      <td>x{{product.quantity}}</td>
+      <td>{{((product.prix) /100) |number_format(2, ',', '.')}} €</td>
+      <td>{{((product.total) /100) |number_format(2, ',', '.')}} €</td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+<div class="text-end mt-5">
+<strong>Sous-total : </strong>{{((order.getTotal) /100) |number_format(2, ',', '.')}} € <br> 
+<strong>Livraison : </strong>{{((order.carrierprix) /100) |number_format(2, ',', '.')}} € <br> 
+<strong>Total : </strong>{{((order.carrierPrix + order.getTotal) / 100) |number_format(2, ',', '.')}} €
+</div>
+{% endblock %}

@@ -120,6 +120,53 @@ class __TwigTemplate_de38ca6be82c870081c76a178c4e770c extends Template
         echo "\" class=\"btn btn-primary\">Ajouter au panier</a>
         </div>
     </div>
+    <hr class=\"border border-black border-3 opacity-75\">
+    <div class=\"text-center mt-5\">
+        <h3>Nos meilleurs ventes</h3>
+        <p>Découvrez nos articles les plus vendus</p>
+    </div>
+    <div class=\"row\">
+    ";
+        // line 26
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 26, $this->source); })()));
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
+        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+            // line 27
+            echo "        <div class=\"col-md-3\">
+        ";
+            // line 28
+            $this->loadTemplate("products/single_product.html.twig", "products/show.html.twig", 28)->display($context);
+            // line 29
+            echo "        </div>
+    ";
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['length'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 31
+        echo "        </div><!-- /.row -->
+
 
 
     
@@ -155,7 +202,7 @@ class __TwigTemplate_de38ca6be82c870081c76a178c4e770c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  119 => 17,  115 => 16,  110 => 14,  106 => 13,  102 => 12,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
+        return array (  168 => 31,  153 => 29,  151 => 28,  148 => 27,  131 => 26,  119 => 17,  115 => 16,  110 => 14,  106 => 13,  102 => 12,  94 => 9,  89 => 6,  79 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -179,6 +226,19 @@ class __TwigTemplate_de38ca6be82c870081c76a178c4e770c extends Template
             <a href=\"{{path('add_to_cart',{'id' :product.id})}}\" class=\"btn btn-primary\">Ajouter au panier</a>
         </div>
     </div>
+    <hr class=\"border border-black border-3 opacity-75\">
+    <div class=\"text-center mt-5\">
+        <h3>Nos meilleurs ventes</h3>
+        <p>Découvrez nos articles les plus vendus</p>
+    </div>
+    <div class=\"row\">
+    {% for product in products %}
+        <div class=\"col-md-3\">
+        {% include 'products/single_product.html.twig' %}
+        </div>
+    {% endfor %}
+        </div><!-- /.row -->
+
 
 
     

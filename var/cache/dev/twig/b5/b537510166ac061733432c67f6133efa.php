@@ -185,41 +185,46 @@ class __TwigTemplate_fd40aa8508e0fab40743280a0175a240 extends Template
 
         </td>
       </tr>
-    </tbody>
-    ";
+      
+          ";
                 // line 57
                 $context["quantitytotal"] = ((isset($context["quantitytotal"]) || array_key_exists("quantitytotal", $context) ? $context["quantitytotal"] : (function () { throw new RuntimeError('Variable "quantitytotal" does not exist.', 57, $this->source); })()) + twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 57));
                 // line 58
-                echo "    ";
+                echo "          ";
                 $context["total"] = ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 58, $this->source); })()) + (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "product", [], "any", false, false, false, 58), "prix", [], "any", false, false, false, 58) * twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 58)));
                 // line 59
-                echo "    ";
+                echo "    
+    ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 60
-            echo "  </table>
+            // line 61
+            echo "    </tbody>
+  </table>
   <div class=\"text-center mb-5\">
       <b>Nombre de produit : </b>";
-            // line 62
-            echo twig_escape_filter($this->env, (isset($context["quantitytotal"]) || array_key_exists("quantitytotal", $context) ? $context["quantitytotal"] : (function () { throw new RuntimeError('Variable "quantitytotal" does not exist.', 62, $this->source); })()), "html", null, true);
+            // line 64
+            echo twig_escape_filter($this->env, (isset($context["quantitytotal"]) || array_key_exists("quantitytotal", $context) ? $context["quantitytotal"] : (function () { throw new RuntimeError('Variable "quantitytotal" does not exist.', 64, $this->source); })()), "html", null, true);
             echo "<br>
       <b>Total de mon panier</b>";
-            // line 63
-            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 63, $this->source); })()) / 100), "2"), "html", null, true);
+            // line 65
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 65, $this->source); })()) / 100), "2"), "html", null, true);
             echo " €<br>
           <div class=\"d-grid mt-3\" >
-              <a href=\"\" class=\"btn btn-success btn-block\">Valider mon panier</a>
+              <a href=\"";
+            // line 67
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_order");
+            echo "\" class=\"btn btn-success btn-block\">Valider mon panier</a>
           </div>
   </div>
 ";
         } else {
-            // line 69
+            // line 71
             echo "<hr>
 <p class= \"text-center fs-1\"><b>Votre panier est vide</b></p>
 <a href=\"";
-            // line 71
+            // line 73
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_products");
             echo "\">Revenir à nos produits </a>
 ";
@@ -253,7 +258,7 @@ class __TwigTemplate_fd40aa8508e0fab40743280a0175a240 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  223 => 71,  219 => 69,  210 => 63,  206 => 62,  202 => 60,  196 => 59,  193 => 58,  191 => 57,  182 => 51,  178 => 50,  172 => 47,  166 => 44,  162 => 43,  158 => 42,  153 => 40,  149 => 39,  144 => 37,  139 => 35,  135 => 34,  126 => 30,  121 => 27,  116 => 26,  113 => 25,  111 => 24,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  228 => 73,  224 => 71,  217 => 67,  212 => 65,  208 => 64,  203 => 61,  196 => 59,  193 => 58,  191 => 57,  182 => 51,  178 => 50,  172 => 47,  166 => 44,  162 => 43,  158 => 42,  153 => 40,  149 => 39,  144 => 37,  139 => 35,  135 => 34,  126 => 30,  121 => 27,  116 => 26,  113 => 25,  111 => 24,  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -313,16 +318,18 @@ class __TwigTemplate_fd40aa8508e0fab40743280a0175a240 extends Template
 
         </td>
       </tr>
-    </tbody>
-    {% set quantitytotal = quantitytotal + (product.quantity) %}
-    {% set total = total + (product.product.prix * product.quantity) %}
+      
+          {% set quantitytotal = quantitytotal + (product.quantity) %}
+          {% set total = total + (product.product.prix * product.quantity) %}
+    
     {% endfor %}
+    </tbody>
   </table>
   <div class=\"text-center mb-5\">
       <b>Nombre de produit : </b>{{ quantitytotal }}<br>
       <b>Total de mon panier</b>{{ (total/ 100) |number_format('2') }} €<br>
           <div class=\"d-grid mt-3\" >
-              <a href=\"\" class=\"btn btn-success btn-block\">Valider mon panier</a>
+              <a href=\"{{path('app_order')}}\" class=\"btn btn-success btn-block\">Valider mon panier</a>
           </div>
   </div>
 {% else %}

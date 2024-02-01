@@ -68,9 +68,23 @@ class __TwigTemplate_a77a6e97541a35740bacdf8f07d27ee8 extends Template
         echo "
     <h1>Inscription</h1>
 
-";
+    ";
         // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form');
+        if ((isset($context["notification"]) || array_key_exists("notification", $context) ? $context["notification"] : (function () { throw new RuntimeError('Variable "notification" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "    
+  <div class='alert alert-info'> ";
+            // line 9
+            echo twig_escape_filter($this->env, (isset($context["notification"]) || array_key_exists("notification", $context) ? $context["notification"] : (function () { throw new RuntimeError('Variable "notification" does not exist.', 9, $this->source); })()), "html", null, true);
+            echo "</div>
+   <hr>     
+    ";
+        }
+        // line 12
+        echo "
+";
+        // line 13
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'form');
         echo "
 
 ";
@@ -103,7 +117,7 @@ class __TwigTemplate_a77a6e97541a35740bacdf8f07d27ee8 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  87 => 13,  84 => 12,  78 => 9,  75 => 8,  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -113,6 +127,12 @@ class __TwigTemplate_a77a6e97541a35740bacdf8f07d27ee8 extends Template
 {% block content%}
 
     <h1>Inscription</h1>
+
+    {% if notification %}
+    
+  <div class='alert alert-info'> {{notification}}</div>
+   <hr>     
+    {% endif %}
 
 {{ form(form) }}
 

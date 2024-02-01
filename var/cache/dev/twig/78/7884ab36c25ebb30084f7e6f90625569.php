@@ -92,17 +92,28 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
         echo ".<br>
     C'est dans cet espace que vous pouvez gérer vos informations personnelles.
     <hr>
-    - <a href=\"";
+    ";
         // line 10
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 11
+            echo "    - <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
+            echo "\">vous êtes administrateur, accéder au backoffice.</a><br>
+    ";
+        }
+        // line 13
+        echo "    - <a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_password");
         echo "\">Modifier votre mot de passe.</a><br>
     - <a href=\"";
-        // line 11
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_adress");
         echo "\">Gérer vos adresses.</a><br>
+    - <a href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_order");
+        echo "\">Mes commandes.</a><br>
 
-    - Ajouter mes adresses.<br>
-    - Mes commandes.
 
 ";
         
@@ -134,7 +145,7 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  101 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  114 => 15,  110 => 14,  105 => 13,  99 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,11 +159,13 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
     Bienvenue dans votre compte {{app.user.firstname}}.<br>
     C'est dans cet espace que vous pouvez gérer vos informations personnelles.
     <hr>
+    {% if is_granted('ROLE_ADMIN' )%}
+    - <a href=\"{{ path('admin') }}\">vous êtes administrateur, accéder au backoffice.</a><br>
+    {% endif %}
     - <a href=\"{{ path('app_account_password') }}\">Modifier votre mot de passe.</a><br>
     - <a href=\"{{ path('app_account_adress') }}\">Gérer vos adresses.</a><br>
+    - <a href=\"{{ path('app_account_order') }}\">Mes commandes.</a><br>
 
-    - Ajouter mes adresses.<br>
-    - Mes commandes.
 
 {% endblock %}
 ", "account/index.html.twig", "/var/www/html/laboutiquefrancaise/templates/account/index.html.twig");
