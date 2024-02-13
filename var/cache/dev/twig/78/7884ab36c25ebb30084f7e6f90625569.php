@@ -96,24 +96,51 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
         // line 10
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
             // line 11
-            echo "    - <a href=\"";
+            echo "    <div class='text-decoration-none text-center mb-5 ' ><small><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
-            echo "\">vous êtes administrateur, accéder au backoffice.</a><br>
+            echo "\" class='text-decoration-none'>vous êtes administrateur, accéder au backoffice.</a></small></div> <br>
     ";
         }
         // line 13
-        echo "    - <a href=\"";
+        echo "
+<div class=\"row\">
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"";
+        // line 17
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/mdp.png"), "html", null, true);
+        echo "\" alt=\"Modifier votre mot de passe\"><br>
+            <a href=\"";
+        // line 18
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_password");
-        echo "\">Modifier votre mot de passe.</a><br>
-    - <a href=\"";
-        // line 14
+        echo "\">Modifier votre mot de passe.</a>
+        </div>
+    </div>
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"";
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/emplacement.png"), "html", null, true);
+        echo "\" alt=\"Gérer vos adresses\"><br>
+            <a href=\"";
+        // line 24
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_adress");
-        echo "\">Gérer vos adresses.</a><br>
-    - <a href=\"";
-        // line 15
+        echo "\">Gérer vos adresses.</a>
+        </div>
+    </div>
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"";
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/boite.png"), "html", null, true);
+        echo "\" alt=\"Mes commandes\"><br>
+            <a href=\"";
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_account_order");
-        echo "\">Mes commandes.</a><br>
-
+        echo "\">Mes commandes.</a>
+        </div>
+    </div>
+</div>
 
 ";
         
@@ -145,7 +172,7 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  114 => 15,  110 => 14,  105 => 13,  99 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 30,  135 => 29,  127 => 24,  123 => 23,  115 => 18,  111 => 17,  105 => 13,  99 => 11,  97 => 10,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -160,12 +187,29 @@ class __TwigTemplate_04adbb2da98619046a482b06a43be26b extends Template
     C'est dans cet espace que vous pouvez gérer vos informations personnelles.
     <hr>
     {% if is_granted('ROLE_ADMIN' )%}
-    - <a href=\"{{ path('admin') }}\">vous êtes administrateur, accéder au backoffice.</a><br>
+    <div class='text-decoration-none text-center mb-5 ' ><small><a href=\"{{ path('admin') }}\" class='text-decoration-none'>vous êtes administrateur, accéder au backoffice.</a></small></div> <br>
     {% endif %}
-    - <a href=\"{{ path('app_account_password') }}\">Modifier votre mot de passe.</a><br>
-    - <a href=\"{{ path('app_account_adress') }}\">Gérer vos adresses.</a><br>
-    - <a href=\"{{ path('app_account_order') }}\">Mes commandes.</a><br>
 
+<div class=\"row\">
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"{{asset('assets/img/mdp.png')}}\" alt=\"Modifier votre mot de passe\"><br>
+            <a href=\"{{ path('app_account_password') }}\">Modifier votre mot de passe.</a>
+        </div>
+    </div>
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"{{asset('assets/img/emplacement.png')}}\" alt=\"Gérer vos adresses\"><br>
+            <a href=\"{{ path('app_account_adress') }}\">Gérer vos adresses.</a>
+        </div>
+    </div>
+    <div class=\"col-md-4\">
+        <div class=\"account-item text-center\">
+            <img src=\"{{asset('assets/img/boite.png')}}\" alt=\"Mes commandes\"><br>
+            <a href=\"{{ path('app_account_order') }}\">Mes commandes.</a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
 ", "account/index.html.twig", "/var/www/html/laboutiquefrancaise/templates/account/index.html.twig");

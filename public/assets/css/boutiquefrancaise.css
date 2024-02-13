@@ -59,4 +59,15 @@ body{
     margin-top: 13px;
 }
 
-/* TEST HR */
+.account-item{
+background-color: #7ed6df;
+padding: 40px;
+}
+
+.account-item a {
+    text-transform: uppercase;
+    font-size : 20px;
+    color : #192a56;
+    font-weight: bold;
+    text-decoration: none;
+}

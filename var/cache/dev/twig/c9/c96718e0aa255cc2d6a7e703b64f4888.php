@@ -114,10 +114,9 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
           <li class=\"nav-item\">
             <a class=\"nav-link active\" aria-current=\"page\" href=\"\">Qui sommes-nous ?</a>
           </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Contact</a>
-          </li>
-        </ul>
+          ";
+        // line 54
+        echo "        </ul>
         <div class=\"navbar-item-custom\">
         ";
         // line 56
@@ -386,7 +385,7 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  359 => 130,  349 => 129,  339 => 111,  329 => 110,  309 => 14,  290 => 10,  280 => 131,  278 => 129,  271 => 125,  256 => 112,  254 => 110,  248 => 109,  241 => 104,  228 => 93,  215 => 88,  211 => 87,  207 => 86,  196 => 83,  192 => 82,  188 => 80,  175 => 78,  171 => 77,  167 => 75,  165 => 74,  153 => 65,  149 => 64,  144 => 61,  136 => 59,  126 => 57,  124 => 56,  111 => 46,  101 => 39,  91 => 32,  87 => 31,  70 => 16,  68 => 14,  63 => 12,  58 => 10,  47 => 1,);
+        return array (  358 => 130,  348 => 129,  338 => 111,  328 => 110,  308 => 14,  289 => 10,  279 => 131,  277 => 129,  270 => 125,  255 => 112,  253 => 110,  247 => 109,  240 => 104,  227 => 93,  214 => 88,  210 => 87,  206 => 86,  195 => 83,  191 => 82,  187 => 80,  174 => 78,  170 => 77,  166 => 75,  164 => 74,  152 => 65,  148 => 64,  143 => 61,  135 => 59,  125 => 57,  123 => 56,  119 => 54,  111 => 46,  101 => 39,  91 => 32,  87 => 31,  70 => 16,  68 => 14,  63 => 12,  58 => 10,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -441,9 +440,9 @@ class __TwigTemplate_4df3ed27294b9cdce0b95f513c662f88 extends Template
           <li class=\"nav-item\">
             <a class=\"nav-link active\" aria-current=\"page\" href=\"\">Qui sommes-nous ?</a>
           </li>
-          <li class=\"nav-item\">
-            <a class=\"nav-link active\" aria-current=\"page\" href=\"#\">Contact</a>
-          </li>
+          {# <li class=\"nav-item\">
+            <a class=\"nav-link active\" aria-current=\"page\" href=\"{{path('app_contact')}}\">Contact</a>
+          </li> #}
         </ul>
         <div class=\"navbar-item-custom\">
         {% if app.user %}

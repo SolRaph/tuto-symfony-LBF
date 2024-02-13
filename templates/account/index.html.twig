@@ -8,11 +8,28 @@
     C'est dans cet espace que vous pouvez gérer vos informations personnelles.
     <hr>
     {% if is_granted('ROLE_ADMIN' )%}
-    - <a href="{{ path('admin') }}">vous êtes administrateur, accéder au backoffice.</a><br>
+    <div class='text-decoration-none text-center mb-5 ' ><small><a href="{{ path('admin') }}" class='text-decoration-none'>vous êtes administrateur, accéder au backoffice.</a></small></div> <br>
     {% endif %}
-    - <a href="{{ path('app_account_password') }}">Modifier votre mot de passe.</a><br>
-    - <a href="{{ path('app_account_adress') }}">Gérer vos adresses.</a><br>
-    - <a href="{{ path('app_account_order') }}">Mes commandes.</a><br>
 
+<div class="row">
+    <div class="col-md-4">
+        <div class="account-item text-center">
+            <img src="{{asset('assets/img/mdp.png')}}" alt="Modifier votre mot de passe"><br>
+            <a href="{{ path('app_account_password') }}">Modifier votre mot de passe.</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="account-item text-center">
+            <img src="{{asset('assets/img/emplacement.png')}}" alt="Gérer vos adresses"><br>
+            <a href="{{ path('app_account_adress') }}">Gérer vos adresses.</a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="account-item text-center">
+            <img src="{{asset('assets/img/boite.png')}}" alt="Mes commandes"><br>
+            <a href="{{ path('app_account_order') }}">Mes commandes.</a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
